@@ -1,0 +1,39 @@
+<streaming>
+    <service>
+        <name>Local RTMP Server</name>
+        <servers>
+            <server>
+                <name>Primary</name>
+                <url>rtmp://<IP of your RTMP Server>/live</url>
+            </server>
+        </servers>
+        <profiles>
+            <profile>
+                <name>Streaming High</name>
+                <config resolution="1080p" fps="60">
+                    <bitrate>9000000</bitrate>
+                    <audio-bitrate>128000</audio-bitrate>
+                    <keyframe-interval>2</keyframe-interval>
+                </config>
+                <config resolution="1080p" fps="30">
+                    <bitrate>6000000</bitrate>
+                    <audio-bitrate>128000</audio-bitrate>
+                    <keyframe-interval>2</keyframe-interval>
+                </config>
+            </profile>
+            <profile>
+                <name>Streaming Low</name>
+                <config resolution="1080p" fps="60">
+                    <bitrate>4500000</bitrate>
+                    <audio-bitrate>128000</audio-bitrate>
+                    <keyframe-interval>2</keyframe-interval>
+                </config>
+                <config resolution="1080p" fps="30">
+                    <bitrate>3000000</bitrate>
+                    <audio-bitrate>128000</audio-bitrate>
+                    <keyframe-interval>2</keyframe-interval>
+                </config>
+            </profile>
+        </profiles>
+    </service>      
+</streaming>
