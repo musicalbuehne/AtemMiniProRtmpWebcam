@@ -37,7 +37,9 @@ Start ffmpeg from the command line to server two RTMP servers (one for the incom
     ffmpeg -f flv -listen 1 -i rtmp://<IP of your RTMP Server>:1935/live -c copy -f flv -listen 1 rtmp://<IP of your RTMP Server>:8889/live
 Set the correct IP Addresses. RTMP Server is this device. Here port 1935 (default RTMP) will accept the input of the ATEM and port 8889 will serve VLC.
 Make sure to allow ffmpeg to accept connections from the ATEM if using a local firewall.
+
 **! ATTENTION !**
+
 If either video stream (from ATEM or to VLC) crashes you will have to restart ffmpeg. This problem can be worked around by making ffmpeg and VLC restart by themselves or by using another RTMP server like nginx.
 ## nginx
 TBD
@@ -49,6 +51,16 @@ Start VLC and go to "Media -> Open Network Stream" (CTRL + N). Enter the URL you
     rtmp://<IP of your RTMP Server>/live
 Click Play. You will not see any video or hear any audio.
 # Optional: Check your stream using Studio Monitor
-You can check the video and audio stream by using the NDI Studio Monitor. Click on the hamburger menu (top left corner) and select your NDI Server and here the VLC stream.
+You can check the video and audio stream by using the NDI Studio Monitor. Click on the hamburger menu (top left corner) and select your NDI Server and the VLC stream.
 # Start the virtual webcam
-Start the NDI Tools "Virtual Webcam". Right-click the tray icon and select your NDI Server and here the VLC stream. If you do not see the virtual webcam or any video in your desired application make sure to restart it.
+Start the NDI Tools "Virtual Webcam". Right-click the tray icon and select your NDI Server and the VLC stream. If you do not see the virtual webcam or any video in your desired application make sure to restart it.
+# Footnote
+This is just a memory log of my adventure trying to record a works meeting. Feel free to suggest enhancements.
+# Sources
+https://forum.blackmagicdesign.com/viewtopic.php?f=4&t=110566
+
+https://video.stackexchange.com/questions/26257/rtmp-server-using-ffmpeg
+
+https://www.newtek.com/blog/tips/vlc-media-player-and-newtek-ndi-vlc-plugin/
+
+https://aaronparecki.com/2020/09/07/7/raspberry-pi-streaming-server
